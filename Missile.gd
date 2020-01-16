@@ -19,7 +19,7 @@ func init(spawn_point_x: float, target: Vector2, speed: float):
 	var pos = self.get_position()
 	var v_diff = target - pos
 	velocity = v_diff.normalized()*speed
-	# TODO: rotation?
+	self.look_at(target)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
