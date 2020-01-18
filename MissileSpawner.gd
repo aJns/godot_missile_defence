@@ -3,7 +3,7 @@ extends Node
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var spawn_per_minute = 120
+var spawn_per_minute = 10
 var time_between_spawns_s = 60/spawn_per_minute
 var time_since_last_spawn = time_between_spawns_s
 var missile_speed = 100
