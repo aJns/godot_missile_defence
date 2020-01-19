@@ -41,5 +41,5 @@ func spawn_missile():
 	target.y += spawn_y_offset
 	var x = rng.randf_range(spawn_pt_x_range[0], spawn_pt_x_range[1])
 	var spawn_point = Vector2(x, half_circle_y(x)+spawn_y_offset)
-	node.init(spawn_point, target, missile_speed)
+	node.init(spawn_point, target, missile_speed, Vector2(0,0))
 	add_child(node)
