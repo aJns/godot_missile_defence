@@ -2,7 +2,7 @@
 
 Keep this short and sweet! Preferably <= 5 items
 
-- [ ] Separate Missile and Explosion scenes
+- [x] Separate Missile and Explosion scenes
 - [ ] Create a missile class hierarchy
     * Projectile super class
         * Rocket class for "dumb" enemy projectiles
