@@ -2,12 +2,10 @@
 
 Keep this short and sweet! Preferably <= 5 items
 
-- [x] Separate Missile and Explosion scenes
-- [ ] Create a missile class hierarchy
-    * Projectile super class
-        * Rocket class for "dumb" enemy projectiles
-        * PlayerMissile for player missiles (duh)
-- [ ] Explosions destroy missiles and damage the city
+- [x] Explosions destroy missiles
+- [ ] Explosions damage the city
+- [ ] Player can shoot missiles
+    * fly toward target, and explode on it
 
 ## Tips and notes
 

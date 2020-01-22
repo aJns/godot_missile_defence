@@ -20,6 +20,7 @@ func init(flight_direction: Vector2, speed: float):
 		
 		
 func explode():
+	self.remove_from_group("projectiles")	# Gotta do this, so we don't reference this missile anymore
 	var exp_node = explosion.instance()
 	exp_node.position = self.position
 	get_node("/root").add_child(exp_node)

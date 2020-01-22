@@ -3,7 +3,8 @@ extends Node
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var spawn_per_minute = 120
+var missiles_spawned = 0
+var spawn_per_minute = 60
 var time_between_spawns_s = 60/spawn_per_minute
 var time_since_last_spawn = time_between_spawns_s
 
@@ -41,6 +42,7 @@ func _process(delta):
 	
 	if time_since_last_spawn > time_between_spawns_s:
 		spawn_missile()
+		missiles_spawned += 1
 		time_since_last_spawn = 0
 
 
