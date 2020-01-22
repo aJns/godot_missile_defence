@@ -15,12 +15,17 @@ func _ready():
 
 func deal_damage():
 	dealt_damage = true
-	var projectiles = get_tree().get_nodes_in_group("projectiles")
 	
+	var projectiles = get_tree().get_nodes_in_group("projectiles")
 	for p in projectiles:
 		if is_instance_valid(p):
 			if self.position.distance_to(p.position) < explo_range:
 				p.explode()
+	
+	var buildings = get_tree().get_nodes_in_group("buildings")
+	for b in buildings:
+		if is_instance_valid(b):
+			b.take_damage(self.position, explo_range)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
