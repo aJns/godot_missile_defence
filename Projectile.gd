@@ -4,6 +4,9 @@ class_name Projectile
 
 var velocity: Vector2
 
+var speed: float
+var target: Vector2
+
 const MAX_DST_ORIG = 10000
 const GROUND_LEVEL = 550
 
@@ -15,8 +18,10 @@ func _ready():
 	pass
 
 
-func init(flight_direction: Vector2, speed: float):
+func init(flight_direction: Vector2, speed: float, target: Vector2):
+	self.speed = speed
 	self.velocity = flight_direction.normalized()*speed
+	self.target = target
 		
 		
 func explode():
@@ -32,6 +37,9 @@ func check_state(delta):
 		self.queue_free()
 
 	if self.position.y > GROUND_LEVEL:
+		explode()
+	
+	if self.position.distance_to(target) < max(speed*delta, 1):
 		explode()
 
 

@@ -59,5 +59,5 @@ func spawn_missile():
 	var flight_dir = node.position.direction_to(target)
 	
 	var speed = rng.randf_range(AVG_MISSILE_SPEED-MSL_SPEED_VAR, AVG_MISSILE_SPEED+MSL_SPEED_VAR)
-	node.init(flight_dir, speed)
+	node.init(flight_dir, speed, Vector2(9999, 9999))
 	add_child(node)
