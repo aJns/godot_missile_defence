@@ -12,16 +12,21 @@ const GROUND_LEVEL = 550
 
 var explosion = preload("res://Explosion.tscn")
 
+var draw_target: bool
+var target_sprite: Sprite
+var target_scene = preload("res://Target.tscn")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 
 
-func init(flight_direction: Vector2, speed: float, target: Vector2):
+func init(flight_direction: Vector2, speed: float, target: Vector2, draw_target: bool):
 	self.speed = speed
 	self.velocity = flight_direction.normalized()*speed
 	self.target = target
+	self.draw_target = draw_target
 		
 		
 func explode():
@@ -29,6 +34,8 @@ func explode():
 	var exp_node = explosion.instance()
 	exp_node.position = self.position
 	get_node("/root").add_child(exp_node)
+	if target_sprite:
+		target_sprite.queue_free()
 	self.queue_free()
 
 
@@ -47,7 +54,14 @@ func move(delta):
 	self.translate(delta*velocity)
 	self.look_at(position+velocity)
 	
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if draw_target:
+		target_sprite = target_scene.instance()
+		get_node("/root").add_child(target_sprite)
+		target_sprite.position = target
+		draw_target = false
+		
 	check_state(delta)
 	move(delta)
