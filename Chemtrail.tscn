@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Chemtrail.gd" type="Script" id=1]
+
+[node name="Chemtrail" type="Line2D"]
+texture_mode = 3080292
+script = ExtResource( 1 )

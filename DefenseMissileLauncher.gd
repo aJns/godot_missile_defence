@@ -19,6 +19,6 @@ func _process(delta):
 		
 		msl.position = self.position
 		var flight_dir = msl.position.direction_to(target)
-		msl.init(flight_dir, 100, target, true)
 		get_node("/root").add_child(msl) # For some reason if add as child to missile_defense to missile is invisible
 		# TODO: find out why ^^
+		msl.init(flight_dir, 100, target, true)

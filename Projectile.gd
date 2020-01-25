@@ -16,6 +16,9 @@ var draw_target: bool
 var target_sprite: Sprite
 var target_scene = preload("res://Target.tscn")
 
+var chemtrail_scene = preload("res://Chemtrail.tscn")
+var chemtrail: Line2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,6 +30,10 @@ func init(flight_direction: Vector2, speed: float, target: Vector2, draw_target:
 	self.velocity = flight_direction.normalized()*speed
 	self.target = target
 	self.draw_target = draw_target
+	
+	self.chemtrail = chemtrail_scene.instance()
+	get_node("/root").add_child(chemtrail)
+	chemtrail.set_start_pos(self.position)
 		
 		
 func explode():
@@ -36,6 +43,7 @@ func explode():
 	get_node("/root").add_child(exp_node)
 	if target_sprite:
 		target_sprite.queue_free()
+	chemtrail.fade_away()
 	self.queue_free()
 
 
@@ -53,6 +61,7 @@ func check_state(delta):
 func move(delta):
 	self.translate(delta*velocity)
 	self.look_at(position+velocity)
+	self.chemtrail.update_end_pos(self.position)
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
