@@ -12,6 +12,9 @@ const GROUND_LEVEL = 550
 
 var explosion = preload("res://Explosion.tscn")
 
+var red_sprite = preload("res://missile_red.png")
+var blue_sprite = preload("res://missile_blue.png")
+
 var draw_target: bool
 var target_sprite: Sprite
 var target_scene = preload("res://Target.tscn")
@@ -19,6 +22,10 @@ var target_scene = preload("res://Target.tscn")
 var chemtrail_scene = preload("res://Chemtrail.tscn")
 var chemtrail: Line2D
 
+enum MSL_COLOR{
+	BLUE,
+	RED
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,6 +42,12 @@ func init(flight_direction: Vector2, speed: float, target: Vector2, draw_target:
 	get_node("/root").add_child(chemtrail)
 	chemtrail.set_start_pos(self.position)
 		
+		
+func set_sprite_color(color):
+	if color == MSL_COLOR.BLUE:
+		get_node("missile").set_texture(blue_sprite)
+	if color == MSL_COLOR.RED:
+		get_node("missile").set_texture(red_sprite)
 		
 func explode():
 	self.remove_from_group("projectiles")	# Gotta do this, so we don't reference this missile anymore

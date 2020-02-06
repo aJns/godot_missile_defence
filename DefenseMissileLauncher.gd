@@ -7,6 +7,12 @@ extends Node2D
 const missile_speed = 100
 var missile_scene = preload("res://Projectile.tscn") 
 
+
+enum MSL_COLOR{
+	BLUE,
+	RED
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -25,3 +31,4 @@ func _process(delta):
 		get_node("/root").add_child(msl) # For some reason if add as child to missile_defense to missile is invisible
 		# TODO: find out why ^^
 		msl.init(flight_dir, 100, target, true)
+		msl.set_sprite_color(MSL_COLOR.BLUE)

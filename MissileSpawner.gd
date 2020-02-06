@@ -11,6 +11,11 @@ var time_since_last_spawn = time_between_spawns_s
 const AVG_MISSILE_SPEED = 100
 const MSL_SPEED_VAR = 30
 
+enum MSL_COLOR{
+	BLUE,
+	RED
+}
+
 const WINDOW_CEIL = 0
 const WINDOW_WIDTH = 1024
 
@@ -61,3 +66,4 @@ func spawn_missile():
 	var speed = rng.randf_range(AVG_MISSILE_SPEED-MSL_SPEED_VAR, AVG_MISSILE_SPEED+MSL_SPEED_VAR)
 	add_child(node)
 	node.init(flight_dir, speed, Vector2(9999, 9999), false)
+	node.set_sprite_color(MSL_COLOR.RED)
