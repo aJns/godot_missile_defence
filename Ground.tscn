@@ -5,4 +5,5 @@
 [node name="Ground" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
+z_index = -100
 texture = ExtResource( 1 )
