@@ -10,7 +10,9 @@ var dealt_damage = false
 
 
 func _ready():
-	pass
+	var rot = rand_range(0, 360)
+	set_rotation_degrees(rot)
+	get_node("AnimationPlayer").play("explosion")
 
 
 func deal_damage():
@@ -33,6 +35,5 @@ func _process(delta):
 	if not dealt_damage:
 		deal_damage()
 	explosion_timer -= delta
-	rotate(0.5*delta)
 	if explosion_timer < 0:
 		self.queue_free()
