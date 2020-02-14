@@ -19,7 +19,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if city_life <= 0:
+		get_node("/root/Game").game_over()
 
 
 func take_damage(explosion_position: Vector2, explosion_radius: float):
