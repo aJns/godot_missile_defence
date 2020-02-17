@@ -2,5 +2,7 @@
 
 [ext_resource path="res://target.png" type="Texture" id=1]
 
-[node name="Target" type="Sprite"]
+[node name="Target" type="Sprite" groups=[
+"removables",
+]]
 texture = ExtResource( 1 )

@@ -51,6 +51,11 @@ func _process(delta):
 		time_since_last_spawn = 0
 
 
+func reset():
+	# TODO: reset stuff
+	pass
+
+
 func spawn_missile():
 	var node = missile.instance()
 	

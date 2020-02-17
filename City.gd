@@ -17,6 +17,11 @@ func _ready():
 	label_node.text = CITY_HP_STR % city_life
 
 
+func reset():
+	city_life = 100
+	label_node.text = CITY_HP_STR % city_life
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if city_life <= 0:

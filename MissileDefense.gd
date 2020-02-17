@@ -24,11 +24,14 @@ func game_over():
 
 
 func reset_game():
-	# TODO
-	# Reset city health
-	# Remove all missiles and explosions
-	# Reset missile spawner and defense missile launcher
-	pass
+	get_node("City").reset()
+	get_node("DefenseMissileLauncher").reset()
+	get_node("MissileSpawner").reset()
+	
+	var removables = get_tree().get_nodes_in_group("removables")
+	
+	for r in removables:
+		r.queue_free()
 
 
 func start_game():

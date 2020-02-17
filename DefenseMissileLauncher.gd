@@ -26,7 +26,13 @@ func _input(event):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-	
+
+
+func reset():
+	# TODO: reset stuff
+	pass
+
+
 func shoot_missile_at(target: Vector2):
 	var msl = missile_scene.instance()
 	
