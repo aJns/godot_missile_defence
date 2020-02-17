@@ -33,11 +33,11 @@ func reset_game():
 
 func start_game():
 	print("Start game")
-	GameMenu.visible = false
+	GameMenu.hide()
 	get_tree().paused = false
 
 
 func pause_game():
 	print("Pause game")
 	get_tree().paused = true
-	GameMenu.visible = true
+	GameMenu.show()

@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 
 # Declare member variables here. Examples:
@@ -28,6 +28,16 @@ func _input(event):
 
 func inject_game_logic_ref(game: Node):
 	GameLogic = game
+
+
+func hide():
+	get_node("new_game").visible = false
+	get_node("title").visible = false
+
+
+func show():
+	get_node("new_game").visible = true
+	get_node("title").visible = true
 
 
 func _on_new_game_pressed():

@@ -4,17 +4,8 @@
 [ext_resource path="res://Menu.gd" type="Script" id=2]
 [ext_resource path="res://new_button.png" type="Texture" id=3]
 
-[node name="Menu" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -1.43195
-margin_top = 1.43198
-margin_right = -1.43195
-margin_bottom = 1.43201
+[node name="Menu" type="CanvasLayer"]
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="title" type="Sprite" parent="."]
 position = Vector2( 498.327, 130.31 )
