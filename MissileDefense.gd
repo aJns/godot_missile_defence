@@ -18,11 +18,6 @@ func _process(delta):
 		get_tree().paused = true
 
 
-func _input(event):
-	if event.is_action_pressed("pause_game"):
-		pause_game()
-
-
 func game_over():
 	get_node("GameOverLabel").visible = true
 
@@ -37,10 +32,12 @@ func reset_game():
 
 
 func start_game():
+	print("Start game")
 	GameMenu.visible = false
 	get_tree().paused = false
 
 
 func pause_game():
+	print("Pause game")
 	get_tree().paused = true
 	GameMenu.visible = true

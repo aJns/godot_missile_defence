@@ -17,6 +17,15 @@ func _ready():
 #func _process(delta):
 #	pass
 
+
+func _input(event):
+	if event.is_action_pressed("pause_game"):
+		if get_tree().paused:
+			GameLogic.start_game()
+		else:
+			GameLogic.pause_game()
+
+
 func inject_game_logic_ref(game: Node):
 	GameLogic = game
 
