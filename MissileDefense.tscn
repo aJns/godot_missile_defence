@@ -39,3 +39,4 @@ Gaemu Overu Gaemu Overu
 Gaemu Overu Gaemu Overu "
 
 [node name="Menu" parent="." instance=ExtResource( 7 )]
+pause_mode = 2

@@ -5,17 +5,22 @@ extends Control
 # var a = 2
 # var b = "text"
 
+var GameLogic: Node
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
+func inject_game_logic_ref(game: Node):
+	GameLogic = game
+
 
 func _on_new_game_pressed():
-	print("Start new game")
-	self.visible = !self.visible
+	GameLogic.reset_game()
+	GameLogic.start_game()

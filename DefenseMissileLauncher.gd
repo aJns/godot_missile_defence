@@ -20,6 +20,7 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("game_missile_shoot"):
+		# TODO: Don't shoot if game is paused
 		shoot_missile_at(event.position)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
