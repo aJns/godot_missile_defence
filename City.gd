@@ -4,7 +4,8 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
-var city_life = 100
+const CITY_FULL_HP = 10
+var city_life = CITY_FULL_HP
 var sprite_node: Sprite
 var label_node: Label
 
@@ -18,7 +19,7 @@ func _ready():
 
 
 func reset():
-	city_life = 100
+	city_life = CITY_FULL_HP
 	label_node.text = CITY_HP_STR % city_life
 
 

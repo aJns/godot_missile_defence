@@ -32,14 +32,20 @@ func inject_game_logic_ref(game: Node):
 
 func hide():
 	get_node("new_game").visible = false
+	get_node("cont").visible = false
 	get_node("title").visible = false
 
 
 func show():
 	get_node("new_game").visible = true
+	get_node("cont").visible = true
 	get_node("title").visible = true
 
 
 func _on_new_game_pressed():
 	GameLogic.reset_game()
+	GameLogic.start_game()
+
+
+func _on_cont_pressed():
 	GameLogic.start_game()
