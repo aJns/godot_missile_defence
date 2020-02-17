@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://title_bar.png" type="Texture" id=1]
 [ext_resource path="res://Menu.gd" type="Script" id=2]
+[ext_resource path="res://new_button.png" type="Texture" id=3]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -24,7 +25,8 @@ margin_left = 399.0
 margin_top = 329.0
 margin_right = 746.0
 margin_bottom = 476.0
-text = "New Game"
+icon = ExtResource( 3 )
+expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
