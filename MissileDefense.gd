@@ -27,6 +27,7 @@ func reset_game():
 	get_node("City").reset()
 	get_node("DefenseMissileLauncher").reset()
 	get_node("MissileSpawner").reset()
+	get_node("GameOverLabel").visible = false
 	
 	var removables = get_tree().get_nodes_in_group("removables")
 	
