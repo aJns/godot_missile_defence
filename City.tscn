@@ -13,10 +13,25 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="health_label" type="Label" parent="."]
-margin_left = -378.063
-margin_top = -268.609
-margin_right = 355.937
-margin_bottom = -160.609
+margin_left = -657.146
+margin_top = 8.58667
+margin_right = -206.146
+margin_bottom = 116.587
 custom_fonts/font = ExtResource( 3 )
-text = "City Health: 100"
+text = "City HP: XX%"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score_label" type="Label" parent="."]
+margin_left = 212.351
+margin_top = -96.1338
+margin_right = 719.351
+margin_bottom = 104.866
+custom_fonts/font = ExtResource( 3 )
+text = "Enemy Missiles
+Survived: XX"
+__meta__ = {
+"_edit_use_anchors_": false
+}

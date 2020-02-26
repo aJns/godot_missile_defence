@@ -31,12 +31,14 @@ margin_top = 15.0
 margin_right = 1010.0
 margin_bottom = 577.0
 custom_fonts/font = ExtResource( 6 )
-text = "Gaemu Overu Gaemu Overu 
-Gaemu Overu Gaemu Overu 
-Gaemu Overu Gaemu Overu 
-Gaemu Overu Gaemu Overu 
-Gaemu Overu Gaemu Overu 
-Gaemu Overu Gaemu Overu "
+text = "Game Over // Game Over 
+Game Over // Game Over 
+Game Over // Game Over 
+Game Over // Game Over 
+Game Over // Game Over 
+Game Over // Game Over 
+"
+align = 1
 
 [node name="Menu" parent="." instance=ExtResource( 7 )]
 pause_mode = 2

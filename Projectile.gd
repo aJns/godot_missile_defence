@@ -22,6 +22,8 @@ var target_scene = preload("res://Target.tscn")
 var chemtrail_scene = preload("res://Chemtrail.tscn")
 var chemtrail: Line2D
 
+var is_enemy = false
+
 enum MSL_COLOR{
 	BLUE,
 	RED
@@ -48,8 +50,13 @@ func set_sprite_color(color):
 		get_node("missile").set_texture(blue_sprite)
 	if color == MSL_COLOR.RED:
 		get_node("missile").set_texture(red_sprite)
+		self.is_enemy = true
 		
 func explode():
+	if self.is_enemy:
+		var city = get_node("/root/Game/City")
+		city.enemy_missile_destroyed()
+	
 	self.remove_from_group("projectiles")	# Gotta do this, so we don't reference this missile anymore
 	var exp_node = explosion.instance()
 	exp_node.position = self.position
