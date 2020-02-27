@@ -24,6 +24,10 @@ config/name="game_doodles"
 run/main_scene="res://MissileDefense.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/resizable=false
+
 [input]
 
 game_missile_shoot={
